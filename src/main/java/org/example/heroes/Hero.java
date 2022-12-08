@@ -1,6 +1,6 @@
 package org.example.heroes;
 
-public class Hero {
+public abstract class Hero {
     protected String name;
 
     protected static final int damage = 0;
@@ -16,8 +16,5 @@ public class Hero {
         return damage;
     }
 
-    public void attackEnemy(Enemy enemy) {
-        enemy.takeDamage(getDamage());
-        System.out.println("Enemy has been attacked!");
-    }
+    public abstract void attackEnemy(Enemy enemy);
 }
