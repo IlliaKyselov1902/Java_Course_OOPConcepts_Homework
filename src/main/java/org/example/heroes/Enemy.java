@@ -1,6 +1,6 @@
 package org.example.heroes;
 
-public class Enemy {
+public class Enemy implements Mortal{
     private int health;
 
     public Enemy(int health) {
@@ -18,5 +18,10 @@ public class Enemy {
     void takeDamage(int damage) {
         System.out.println("OUCH, I received " + damage + " points of damage!");
         setHealth(Math.max(0, getHealth() - damage));
+    }
+
+    @Override
+    public boolean isAlive() {
+        return health > 0;
     }
 }
